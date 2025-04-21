@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      let data = new URLSearchParams(location.search).get("data");
+      if (data) {
+        data = decodeURIComponent(data).replace(/ /g, "+");
+
+        const img = document.createElement("img");
+        img.src = data;
+        document.body.appendChild(img);
+      } else {
+        document.write('No "data" parameter found');
+      }
+    </script>
+  </body>
+</html>
